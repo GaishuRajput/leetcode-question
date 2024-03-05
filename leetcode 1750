@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int minimumLength(string s) {
+            int Left = 0, Right = s.size() - 1;
+
+        while (Left < Right && s[Left] == s[Right]) {
+            char ch = s[Left];
+        // skip the element is adjacent element are same
+            while (Left <= Right && s[Left] == ch) ++Left;
+
+            while (Left <= Right && s[Right] == ch) --Right;
+            
+        }
+
+        return Right - Left + 1;
+    }
+};

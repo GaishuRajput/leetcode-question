@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+         map<ListNode*, bool>table;
+         ListNode* temp = head;
+         while(temp != NULL){
+             if(table[temp] == false){
+                 table[temp] = true;  //mark it as visited
+             }
+             else{
+                 //cycle is present
+                 return true;
+             }
+             temp = temp->next;
+         }
+         return false; // loop not present
+    }
+};
